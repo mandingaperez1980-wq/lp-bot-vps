@@ -1,0 +1,100 @@
+{
+  "NETWORK": "mainnet-beta",
+  
+  "RPC": {
+    "PRIMARY": "https://mainnet.helius-rpc.com/?api-key=YOUR_HELIUS_KEY",
+    "FALLBACKS": [
+      "https://solana-rpc.publicnode.com",
+      "https://api.mainnet-beta.solana.com",
+      "https://rpc.ankr.com/solana"
+    ],
+    "COMMITMENT": "confirmed",
+    "MAX_RETRIES": 5,
+    "RETRY_DELAY_MS": 1000
+  },
+
+  "WALLET": {
+    "PRIVATE_KEY_ENV": "SNIPER_KEY"
+  },
+
+  "STRATEGY": {
+    "MODE": "memecoin_lp",
+    "PRICE_RANGE_BUFFER": 0.15,
+    "REBALANCE_TRIGGER_PERCENT": 0.05,
+    "MIN_BIN_WIDTH": 0.02,
+    "MAX_POOLS_SIMULTANEOUS": 5,
+    "CAPITAL_PER_POOL_PERCENT": 20,
+    "MIN_CAPITAL_RESERVE_SOL": 0.5,
+    "SCAN_INTERVAL_SEC": 30,
+    "MONITOR_INTERVAL_SEC": 15,
+    "REBALANCE_COOLDOWN_SEC": 300,
+    "AUTO_COMPOUND_FEES": true,
+    "COMPOUND_INTERVAL_HOURS": 24
+  },
+
+  "SAFETY": {
+    "MAX_IMPERMANENT_LOSS_PERCENT": 15,
+    "EMERGENCY_IL_PERCENT": 25,
+    "MIN_LIQUIDITY_USD": 50000,
+    "MIN_VOLUME_24H_USD": 100000,
+    "MAX_WHALE_CONCENTRATION_PERCENT": 30,
+    "EXIT_IF_RUG_DETECTED": true,
+    "RUG_DETECTION": {
+      "DEPLOYER_SELL_THRESHOLD_PERCENT": 10,
+      "LIQUIDITY_DROP_THRESHOLD_PERCENT": 50,
+      "LIQUIDITY_DROP_TIMEFRAME_MIN": 5,
+      "LARGE_TRANSFER_ALERT_USD": 50000
+    },
+    "MAX_TOKEN_AGE_HOURS": null,
+    "MIN_TOKEN_AGE_HOURS": 6,
+    "MIN_HOLDERS": 500,
+    "DAILY_LOSS_LIMIT_USD": 500,
+    "CIRCUIT_BREAKER_LOSSES": 3
+  },
+
+  "EXECUTION": {
+    "PRIORITY_FEE_CAP_LAMPORTS": 500000,
+    "JITO_TIP_LAMPORTS": 100000,
+    "JITO_ENABLED": false,
+    "SLIPPAGE_TOLERANCE_BPS": 200,
+    "EMERGENCY_SLIPPAGE_BPS": 500,
+    "SKIP_PREFLIGHT": true,
+    "COMPUTE_UNIT_LIMIT": 400000
+  },
+
+  "FILTERS": {
+    "MIN_MCAP_USD": 200000,
+    "MAX_MCAP_USD": 50000000,
+    "MIN_LIQUIDITY_USD": 50000,
+    "MIN_VOLUME_24H_USD": 100000,
+    "MIN_TXNS_24H": 500,
+    "MIN_APY_PERCENT": 20,
+    "BLACKLISTED_TOKENS": [
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "So11111111111111111111111111111111111111112"
+    ],
+    "BLACKLISTED_SYMBOLS": [
+      "USDC", "USDT", "BUSD", "DAI", "SOL", "WSOL",
+      "BTC", "WBTC", "ETH", "WETH", "mSOL", "bSOL",
+      "stSOL", "jitoSOL", "JUP"
+    ],
+    "PREFERRED_DEX": ["raydium", "meteora", "orca"]
+  },
+
+  "NOTIFICATIONS": {
+    "ENABLED": true,
+    "LOG_FILE": "./logs/bot.log",
+    "TELEGRAM_ENABLED": false,
+    "TELEGRAM_BOT_TOKEN": "",
+    "TELEGRAM_CHAT_ID": ""
+  },
+
+  "DEX_APIS": {
+    "DEXSCREENER": "https://api.dexscreener.com/latest/dex",
+    "DEXSCREENER_BOOSTS": "https://api.dexscreener.com/token-boosts/top/v1",
+    "DEXSCREENER_PROFILES": "https://api.dexscreener.com/token-profiles/latest/v1",
+    "JUPITER_QUOTE": "https://lite-api.jup.ag/swap/v1/quote",
+    "JUPITER_SWAP": "https://lite-api.jup.ag/swap/v1/swap"
+  }
+}
